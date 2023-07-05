@@ -1,0 +1,30 @@
+$dark-purple-100: #0f061a;
+$dark-purple-200: #130d33;
+$dark-purple-300: #1c134a;
+
+$dark-gray-100: #262527;
+$gray-100: #49494d;
+
+$white-100: #fffcff;
+$gray-500: #f7f2f7;
+
+$green-100: #93be30;
+$green-300: #a4d03d;
+$dark-green-200: #647e25;
+
+:root {
+  --text: #49494d;
+  --text-heading: #130d33;
+  --bg: #fffcff;
+  --bg-secondary: #f7f2f7;
+}
+
+.dark {
+  --text: #e6e6e6;
+  --text-heading: #fffcff;
+  --bg: #262527;
+  --bg-secondary: #49494d33;
+}
+
+@media (max-width: 768px) {
+}
