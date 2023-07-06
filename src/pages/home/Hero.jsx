@@ -9,7 +9,7 @@ function Hero() {
     <section className="hero">
       <div className={active ? 'video-wrapper active' : 'video-wrapper'}>
         <button onClick={() => setActive(false)}>&#10005;</button>
-        <video loop controls src="/assets/ocean.mp4"></video>
+        <video controls src="/assets/ocean.mp4"></video>
       </div>
 
       <section className="inner-section">

@@ -40,23 +40,21 @@ function Header() {
           asioso
         </Link>
 
-        <div className="nav-wrapper">
-          <nav className={active ? 'active' : ''}>
-            <Link to="/">Home</Link>
-            <Link to="/">About</Link>
-            <Link to="/">Blog</Link>
-            <Link to="/">Contact</Link>
-          </nav>
+        <nav className={active ? 'active' : ''}>
+          <Link to="/">Home</Link>
+          <Link to="/">About</Link>
+          <Link to="/">Blog</Link>
+          <Link to="/">Contact</Link>
+        </nav>
 
-          <button className="theme-container" onClick={toggle}>
-            <div className="icon">🌙</div>
-            <div className="icon">🔆</div>
-            <div
-              className="ball"
-              style={mode === 'light' ? { left: '2px' } : { right: '2px' }}
-            />
-          </button>
-        </div>
+        <button className="theme-container" onClick={toggle}>
+          <div className="icon">🌙</div>
+          <div className="icon">🔆</div>
+          <div
+            className="ball"
+            style={mode === 'light' ? { left: '2px' } : { right: '2px' }}
+          />
+        </button>
 
         <button
           onClick={toggleNav}

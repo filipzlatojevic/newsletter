@@ -11,13 +11,14 @@ header {
     background-color: rgb(255, 252, 255, 0.35);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 
     .container {
       .logo {
         color: black;
       }
 
-      .nav-wrapper nav {
+      nav {
         a,
         div,
         span {
@@ -35,73 +36,76 @@ header {
     max-width: 1440px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
+    align-items: center;
     padding: 20px;
 
     .logo {
+      margin-right: auto;
       font-size: 34px;
       font-weight: 900;
       color: #fffcff;
     }
 
-    .nav-wrapper {
+    nav {
       display: flex;
-      align-items: center;
       gap: 22px;
+      align-items: center;
+      font-weight: 500;
 
-      nav {
-        display: flex;
-        gap: 22px;
-        align-items: center;
-        font-weight: 500;
+      a {
+        color: #fffcff;
+        font-size: 18px;
 
-        a {
-          color: #fffcff;
-          font-size: 18px;
-
-          &:hover {
-            color: #a4d03d;
-            transition: all 0.15s ease;
-          }
+        &:hover {
+          color: #a4d03d;
+          transition: all 0.15s ease;
         }
       }
+    }
 
-      .theme-container {
-        width: 42px;
-        height: 24px;
-        border: 1.5px solid #a4d03d;
-        border-radius: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 2px;
-        position: relative;
-        cursor: pointer;
+    .theme-container {
+      margin-left: 22px;
+      width: 42px;
+      height: 24px;
+      border: 1.5px solid #a4d03d;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2px;
+      position: relative;
+      cursor: pointer;
 
-        .icon {
-          font-size: 12px;
-        }
+      .icon {
+        font-size: 12px;
+      }
 
-        .ball {
-          width: 15px;
-          height: 15px;
-          background-color: #93be30;
-          border-radius: 50%;
-          position: absolute;
-        }
+      .ball {
+        width: 15px;
+        height: 15px;
+        background-color: #93be30;
+        border-radius: 50%;
+        position: absolute;
       }
     }
   }
 }
 
 @media (max-width: 768px) {
-  header .nav-wrapper nav.active a {
+  header nav.active a {
     color: black;
   }
 
-  .nav-wrapper {
+  header .container .logo {
+    margin: 0;
+  }
+
+  header .container {
+    justify-content: center;
+
     nav {
-      background-color: rgb(255, 252, 255, 0.8);
+      background-color: rgb(255, 252, 255, 0.9);
       position: absolute;
       top: 0;
       right: 0;
@@ -125,8 +129,8 @@ header {
     .theme-container {
       margin: 0;
       position: absolute;
-      right: 50px;
-      top: calc(50% - 6px);
+      left: 20px;
+      top: 50%;
       transform: translateY(-50%);
     }
   }
@@ -146,7 +150,7 @@ header .burger {
   header .container .burger {
     display: inline-block;
     position: absolute;
-    right: 15px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     width: 32px;

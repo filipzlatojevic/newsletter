@@ -87,6 +87,13 @@
               background-color: rgb(247, 242, 247, 0.5);
             }
           }
+
+          &:active {
+            span {
+              scale: 0.8;
+              transition: scale 0.1s ease;
+            }
+          }
         }
       }
     }
@@ -109,6 +116,7 @@
     }
 
     .shape-fill {
+      transition: all 0.9s ease;
       fill: var(--bg);
     }
   }
@@ -129,6 +137,7 @@
   align-items: center;
   width: 90%;
   clip-path: circle(0.4% at 50% 50%);
+  opacity: 0;
   transition: all 0.2s ease-out;
 
   video {
@@ -154,6 +163,7 @@
 .video-wrapper.active {
   clip-path: circle(70.7% at 50% 50%);
   transition: all 0.3s ease;
+  opacity: 1;
 
   video {
     display: block;

@@ -1,8 +1,7 @@
-$dark-purple-100: #0f061a;
+$black-200: #262627;
 $dark-purple-200: #130d33;
 $dark-purple-300: #1c134a;
 
-$dark-gray-100: #262527;
 $gray-100: #49494d;
 
 $white-100: #fffcff;
@@ -14,16 +13,18 @@ $dark-green-200: #647e25;
 
 :root {
   --text: #49494d;
-  --text-heading: #130d33;
+  --text-heading: #262527;
   --bg: #fffcff;
-  --bg-secondary: #f7f2f7;
+  --bg-secondary: #f7f2f733;
+  --bg-third: #f7f5fa;
 }
 
 .dark {
   --text: #e6e6e6;
   --text-heading: #fffcff;
-  --bg: #262527;
+  --bg: #262627;
   --bg-secondary: #49494d33;
+  --bg-third: #333336;
 }
 
 @media (max-width: 768px) {
