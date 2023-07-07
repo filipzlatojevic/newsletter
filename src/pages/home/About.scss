@@ -7,12 +7,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
-
-    div {
-      color: #93be30;
-      font-size: 12px;
-    }
+    gap: 5px;
 
     h2 span {
       font-weight: 700;
@@ -91,10 +86,28 @@
         background-color: #f7f2f7;
         border-radius: 10px;
         font-size: 14px;
+        font-weight: 500;
         position: absolute;
         bottom: 30px;
         left: 30px;
+        transition: all 0.2s ease;
+
+        &:hover {
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+          filter: brightness(0.9);
+        }
       }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .about {
+    .container {
+      flex-direction: column;
+      align-items: center;
     }
   }
 }
@@ -171,19 +184,15 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     align-items: start;
 
     .tech-title {
       display: flex;
-      gap: 15px;
+      gap: 5px;
       flex-direction: column;
       align-items: start;
-
-      div {
-        color: #93be30;
-        font-size: 12px;
-      }
+      max-width: 650px;
 
       h2 span {
         font-weight: 700;
@@ -196,9 +205,11 @@
     }
 
     .tech-card {
+      margin-bottom: 10px;
       background-color: var(--bg-secondary);
       border-radius: 10px;
       padding: 30px 20px 30px 50px;
+      max-width: 650px;
       display: flex;
       flex-direction: column;
       gap: 15px;
@@ -242,111 +253,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .tech-container {
-    margin-top: 50px;
+    margin-top: 80px;
     flex-direction: column;
 
     .img-wrapper {
       padding-bottom: 80px;
-
-      div {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        display: flex;
-        align-items: start;
-        justify-content: center;
-      }
-
-      img {
-        display: block;
-        width: 70%;
-        border-radius: 10px;
-      }
-
-      .blob {
-        position: absolute;
-        z-index: -2;
-        width: 40%;
-        top: 0;
-        left: 10%;
-        animation: levitate 7s ease 0s infinite normal forwards;
-      }
-
-      .blob-stroke {
-        position: absolute;
-        z-index: -1;
-        width: 40%;
-        top: 20%;
-        right: 10%;
-        animation: spin 14s linear infinite;
-      }
-    }
-
-    .text-wrapper {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: start;
-
-      .tech-title {
-        display: flex;
-        gap: 20px;
-        flex-direction: column;
-        align-items: start;
-
-        div {
-          color: #93be30;
-          font-size: 12px;
-        }
-
-        h2 span {
-          font-weight: 700;
-        }
-
-        p {
-          color: var(--text);
-          margin-bottom: 30px;
-        }
-      }
-
-      .tech-card {
-        background-color: var(--bg-secondary);
-        border-radius: 10px;
-        padding: 30px 20px 30px 50px;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        position: relative;
-
-        div {
-          position: absolute;
-          top: 30px;
-          left: 14px;
-          border-radius: 50%;
-          width: 22px;
-          height: 22px;
-          border: 1px solid var(--text);
-          font-size: 11px;
-          padding-bottom: 2px;
-          color: var(--text);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        span {
-          color: var(--text-heading);
-          font-size: 20px;
-          font-weight: 700;
-        }
-
-        p {
-          color: var(--text);
-        }
-      }
     }
   }
 }

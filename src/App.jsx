@@ -3,8 +3,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Loader from './components/loader/Loader';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
-import Posts from './pages/posts/Posts';
-import Post from './pages/post/Post';
+import News from './pages/news/News';
+import New from './pages/new/New';
 
 const Home = lazy(() => import('./pages/home/Home'));
 
@@ -32,12 +32,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/posts',
-        element: <Posts />,
+        path: '/news',
+        element: <News />,
       },
       {
-        path: '/post/:id',
-        element: <Post />,
+        path: '/news/:id',
+        element: <New />,
       },
     ],
   },

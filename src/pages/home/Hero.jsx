@@ -14,7 +14,7 @@ function Hero() {
 
       <section className="inner-section">
         <div className="container">
-          <span>Make it simple</span>
+          <span className="font-satisfy">Make it simple</span>
           <h1>We make digital business simple</h1>
           <div>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque
@@ -34,6 +34,19 @@ function Hero() {
 
         <div className="divider-bottom">
           <svg
+            viewBox="0 0 1250 370"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none">
+            <path
+              d="M1000.19 141.048C912.807 193.244 872.053 219.078 787.166 256.58C731.833 275.949 690.094 299.696 548.971 322.93C490.247 332.598 386.019 345.322 327.133 354.216C217.71 370.555 104.864 362.263 0.833008 330.239V406.603H1219.17V0.660156C1163.21 44.7559 1087.58 88.8516 1000.19 141.048Z"
+              className="shape-fill"
+            />
+          </svg>
+        </div>
+
+        {/* <div className="divider-bottom">
+          <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1200 120"
@@ -42,7 +55,7 @@ function Hero() {
               d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
               className="shape-fill"></path>
           </svg>
-        </div>
+        </div> */}
       </section>
     </section>
   );

@@ -1,6 +1,7 @@
 import About from './About';
 import Hero from './Hero';
-import News from './News';
+import News from './NewsSection';
+import Subscribe from './Subscribe';
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <Hero />
       <About />
       <News />
+      <Subscribe />
       <section className="test">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis
         quae ducimus harum sint eius. Eligendi nulla eveniet autem beatae quas

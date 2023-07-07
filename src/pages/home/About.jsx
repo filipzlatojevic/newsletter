@@ -7,7 +7,7 @@ function About() {
       <section className="inner-section">
         <aside>
           <div className="title">
-            <div>Lorem ipsum dolor</div>
+            <div className="font-satisfy">Lorem ipsum</div>
             <h2>
               <span>Our</span> focus
             </h2>
@@ -56,7 +56,7 @@ function About() {
 
             <div className="text-wrapper">
               <div className="tech-title">
-                <div>Technologies</div>
+                <div className="font-satisfy">Technologies</div>
                 <h2>
                   <span>Impressing our</span> customers
                 </h2>
