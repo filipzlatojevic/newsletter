@@ -23,7 +23,6 @@ function Header() {
   };
 
   useClickOutside(burgerRef, () => setActive(false));
-
   useScrollToHash();
 
   useEffect(() => {
