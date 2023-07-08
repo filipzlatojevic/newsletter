@@ -8,7 +8,11 @@ function Card({ post }) {
       <div className="img-wrapper">
         <img src={post?.urlToImage} alt="background" />
         <div />
-        <Link to={`/news/${post.source.name}`} state={post} />
+        <Link
+          preventScrollReset={false}
+          to={`/news/${post.source.name}`}
+          state={post}
+        />
       </div>
 
       <div className="text-wrapper">

@@ -5,16 +5,17 @@
     rgba(164, 208, 61, 1) 10%,
     rgba(100, 126, 37, 1) 100%
   );
-  padding: 110px 0;
+  padding: 120px 0;
 
   .container {
     display: flex;
-    gap: 150px;
-    justify-content: center;
+    gap: 50px;
+    justify-content: space-between;
     align-items: center;
 
     .title-wrapper {
       flex: 1;
+      max-width: 500px;
       color: #fffcff;
 
       h2 {
@@ -28,7 +29,9 @@
     }
 
     form {
+      position: relative;
       flex: 1;
+      max-width: 600px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -36,14 +39,14 @@
 
       input {
         background-color: #fffcff;
-        height: 48px;
+        height: 50px;
         border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
         outline: none;
         border: none;
-        padding: 10px;
+        padding: 10px 20px;
         width: 100%;
         font-size: 18px;
 
@@ -53,15 +56,33 @@
       }
 
       button {
-        padding: 0 20px;
+        padding: 0 25px;
+        height: 50px;
+        color: #fffcff;
+        transition: all 0.5s ease, transform 0.1s ease;
+      }
+
+      .err {
+        color: rgb(255, 51, 28);
+        font-size: 14px;
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        visibility: hidden;
+
+        &.active {
+          visibility: visible;
+        }
+      }
+
+      .message {
+        color: #fffcff;
+        font-size: 14px;
+        position: absolute;
+        top: -25px;
+        left: 0;
       }
     }
-  }
-}
-
-@media (max-width: 1024px) {
-  .subscribe .container {
-    gap: 50px;
   }
 }
 
@@ -79,11 +100,13 @@
         height: 42px;
         padding: 10px;
         width: 100%;
-        font-size: 16px;
+        font-size: 14px;
       }
 
       button {
         padding: 0 15px;
+        height: 42px;
+        font-size: 12px;
       }
     }
   }

@@ -16,26 +16,26 @@ function About() {
           <div className="container">
             <div className="card">
               <img src="/assets/ocean1.webp" alt="background" />
-              <h2>Customer</h2>
+              <h3>Customer</h3>
               <p>Lorem ipsum dolor sit amet.</p>
 
-              <Link to="/">View Details</Link>
+              <Link to="">View Details</Link>
             </div>
 
             <div className="card">
               <img src="/assets/tokyo.webp" alt="background" />
-              <h2>Content</h2>
+              <h3>Content</h3>
               <p>Lorem ipsum dolor sit amet.</p>
 
-              <Link to="/">Learn More</Link>
+              <Link to="">Learn More</Link>
             </div>
 
             <div className="card">
               <img src="/assets/ocean2.webp" alt="background" />
-              <h2>Touchpoints</h2>
+              <h3>Touchpoints</h3>
               <p>Lorem ipsum dolor sit amet.</p>
 
-              <Link to="/">Subscribe</Link>
+              <Link to="/#subscribe">Subscribe</Link>
             </div>
           </div>
         </aside>

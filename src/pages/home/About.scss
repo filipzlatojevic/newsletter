@@ -68,8 +68,9 @@
         transition: all 0.9s ease;
       }
 
-      h2 {
+      h3 {
         color: #fffcff;
+        font-size: clamp(18px, 3vw, 22px);
       }
 
       p {
@@ -123,9 +124,10 @@
         min-height: 150px;
 
         a {
-          height: 37px;
+          height: 34px;
           bottom: 15px;
           left: 15px;
+          font-size: 12px;
         }
       }
     }

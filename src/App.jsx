@@ -5,12 +5,14 @@ import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import News from './pages/news/News';
 import New from './pages/new/New';
+import ScrollToTop from './components/scrollToTop/ScrollToTop';
 
 const Home = lazy(() => import('./pages/home/Home'));
 
 const Layout = () => {
   return (
     <>
+      <ScrollToTop />
       <Header />
       <Outlet />
       <Footer />

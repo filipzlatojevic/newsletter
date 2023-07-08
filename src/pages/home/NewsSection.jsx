@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import './NewsSection.scss';
 import { newsService } from '../../services/newsService';
 import { useEffect, useState } from 'react';
@@ -19,7 +18,7 @@ function NewsSection() {
   }, []);
 
   return (
-    <section className="news-section">
+    <section id="news" className="news-section">
       <section className="inner-section">
         <div className="title">
           <div className="font-satisfy">Lorem</div>
@@ -30,7 +29,7 @@ function NewsSection() {
 
         {/* NEWS */}
         <div className="container">
-          <div className="card shadow-md">
+          {/* <div className="card shadow-md">
             <div className="img-wrapper">
               <img src="/assets/tokyo.webp" alt="background" />
               <div />
@@ -50,7 +49,7 @@ function NewsSection() {
                 consectetur adipisicing elit.
               </p>
             </div>
-          </div>
+          </div> */}
           {isLoading && <span>Loading...</span>}
 
           {news.map((post, index) => {

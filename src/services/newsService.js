@@ -15,7 +15,7 @@ const getNews = async (category = '', limit = 10) => {
 
 const getSingleNew = async id => {
   try {
-    const response = await fetch(`${API_URL}&id=${id}`);
+    const response = await fetch(`${API_URL}&id=${id}`); // this will work if I have API where I can fetch only one post by id
 
     return await response.json();
   } catch (error) {

@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss';
+import useScrollToHash from '../../hooks/useScrollToHash';
+import useClickOutside from '../../hooks/useClickOutside';
 
 function Header() {
   const [top, setIsTop] = useState(true);
   const [mode, setMode] = useState('light');
   const [active, setActive] = useState(false);
+  const burgerRef = useRef(null);
 
   const toggle = () => {
     setMode(prev => (prev === 'light' ? 'dark' : 'light'));
@@ -18,6 +21,10 @@ function Header() {
   const toggleNav = () => {
     setActive(prev => (prev === false ? true : false));
   };
+
+  useClickOutside(burgerRef, () => setActive(false));
+
+  useScrollToHash();
 
   useEffect(() => {
     window.addEventListener('scroll', isTop);
@@ -42,9 +49,9 @@ function Header() {
 
         <nav className={active ? 'active' : ''}>
           <Link to="/">Home</Link>
-          <Link to="/">About</Link>
-          <Link to="/">Blog</Link>
-          <Link to="/">Contact</Link>
+          <Link to="/#about">About</Link>
+          <Link to="/#news">Blog</Link>
+          <Link to="/#contact">Contact</Link>
         </nav>
 
         <button className="theme-container" onClick={toggle}>
@@ -57,6 +64,7 @@ function Header() {
         </button>
 
         <button
+          ref={burgerRef}
           onClick={toggleNav}
           className={active ? 'burger active' : 'burger'}>
           <div className="top" />

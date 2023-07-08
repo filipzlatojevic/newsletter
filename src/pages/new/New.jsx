@@ -1,19 +1,12 @@
-import {
-  useLocation,
-  ScrollRestoration,
-  useNavigate,
-  Link,
-} from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import './New.scss';
 
 function New() {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  console.log(state);
   return (
     <section className="new">
-      <ScrollRestoration />
       <button onClick={() => navigate(-1)} className="back-btn">
         &#10096;
       </button>

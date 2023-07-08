@@ -61,6 +61,14 @@
     background-color: var(--bg-third);
     transition: background 0.9s ease;
 
+    .btn-grad {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      height: 36px;
+      box-shadow: none;
+    }
+
     span {
       color: var(--text);
       max-width: 60%;
