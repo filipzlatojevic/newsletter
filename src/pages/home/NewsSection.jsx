@@ -2,6 +2,7 @@ import './NewsSection.scss';
 import { newsService } from '../../services/newsService';
 import { useEffect, useState } from 'react';
 import Card from '../../components/card/Card';
+import { Link } from 'react-router-dom';
 
 function NewsSection() {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +27,7 @@ function NewsSection() {
   }, [category]);
 
   return (
-    <section id="news" className="news-section">
+    <section id="newsSection" className="news-section">
       <section className="inner-section">
         <div className="title">
           <div className="font-satisfy">Lorem</div>
@@ -77,6 +78,10 @@ function NewsSection() {
             return <Card post={post} key={index} />;
           })}
         </div>
+
+        <Link className="btn-grad news-page" to="/news">
+          News page
+        </Link>
       </section>
     </section>
   );

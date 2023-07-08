@@ -49,7 +49,7 @@ function Header() {
         <nav className={active ? 'active' : ''}>
           <Link to="/">Home</Link>
           <Link to="/#about">About</Link>
-          <Link to="/#news">Blog</Link>
+          <Link to="/#newsSection">Blog</Link>
           <Link to="/#contact">Contact</Link>
         </nav>
 

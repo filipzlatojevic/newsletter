@@ -23,7 +23,7 @@ function Hero() {
             officia!
           </div>
           <div className="buttons-wrapper">
-            <Link to="/">
+            <Link to="">
               Explore more <span>&#10132;</span>
             </Link>
             <button onClick={() => setActive(true)}>
