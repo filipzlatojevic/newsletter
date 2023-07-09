@@ -22,6 +22,7 @@
     flex-wrap: wrap;
 
     .card {
+      opacity: 0;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -37,6 +38,18 @@
       max-width: 500px;
       min-width: 250px;
       aspect-ratio: 16/9;
+
+      &:first-child {
+        transform: translateX(-80%);
+      }
+
+      &:nth-child(2) {
+        transform: rotateX(60deg);
+      }
+
+      &:last-child {
+        transform: translateX(80%);
+      }
 
       &:hover {
         img {

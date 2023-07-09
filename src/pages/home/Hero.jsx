@@ -1,9 +1,28 @@
 import { Link } from 'react-router-dom';
 import './Hero.scss';
-import { useState } from 'react';
+import { useState, useLayoutEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 function Hero() {
   const [active, setActive] = useState(false);
+  const container = useRef(null);
+  const tl = useRef();
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      tl.current = gsap
+        .timeline({ defaults: { ease: 'power1.inOut' } })
+        .to('.gsap-text', {
+          opacity: 1,
+          y: 0,
+          stagger: 0.35,
+          duration: 0.6,
+        })
+        .to('.buttons-wrapper', { opacity: 1, duration: 0.6 });
+    }, container);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section className="hero">
@@ -13,14 +32,20 @@ function Hero() {
       </div>
 
       <section className="inner-section">
-        <div className="container">
-          <span className="font-satisfy">Make it simple</span>
-          <h1>We make digital business simple</h1>
-          <div>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque
-            nostrum laudantium odio at iure eos! Illum sed perspiciatis qui amet
-            dolore, similique praesentium quas fugiat enim eius fuga maxime
-            officia!
+        <div ref={container} className="container">
+          <div className="gsap-text-wrapper">
+            <span className="gsap-text font-satisfy">Make it simple</span>
+          </div>
+          <div className="gsap-text-wrapper">
+            <h1 className="gsap-text">We make digital business simple</h1>
+          </div>
+          <div className="gsap-text-wrapper">
+            <div className="gsap-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque
+              nostrum laudantium odio at iure eos! Illum sed perspiciatis qui
+              amet dolore, similique praesentium quas fugiat enim eius fuga
+              maxime officia!
+            </div>
           </div>
           <div className="buttons-wrapper">
             <Link to="">

@@ -1,7 +1,35 @@
+import { useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './About.scss';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function About() {
+  const containerRef = useRef();
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(self => {
+      const cards = self.selector('.card');
+      cards.forEach(card => {
+        gsap.to(card, {
+          x: 0,
+          rotateX: 0,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: card,
+            start: '20px 85%',
+            end: '85% 50%',
+            scrub: 0.3,
+          },
+        });
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section id="about" className="about">
       <section className="inner-section">
@@ -13,7 +41,7 @@ function About() {
             </h2>
           </div>
 
-          <div className="container">
+          <div ref={containerRef} className="container">
             <div className="card">
               <img src="/assets/ocean1.webp" alt="background" />
               <h3>Customer</h3>
