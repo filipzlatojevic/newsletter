@@ -3,11 +3,18 @@ import { newsService } from '../../services/newsService';
 import { useEffect, useState } from 'react';
 import Card from '../../components/card/Card';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation, EffectCoverflow } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 function NewsSection() {
   const [isLoading, setIsLoading] = useState(true);
   const [news, setNews] = useState([]);
   const [category, setCategory] = useState('general');
+  const [width, setWidth] = useState();
 
   const fetchNews = async (cat, limit) => {
     setIsLoading(true);
@@ -28,7 +35,8 @@ function NewsSection() {
   };
 
   useEffect(() => {
-    fetchNews(category, 3);
+    fetchNews(category, 6);
+    setWidth(window.innerWidth);
   }, [category]);
 
   return (
@@ -57,12 +65,35 @@ function NewsSection() {
 
         <p className={isLoading ? 'loading' : 'loading inactive'}>Loading...</p>
 
-        <div className="container">
+        <Swiper
+          className="swiper-container"
+          effect={'coverflow'}
+          centeredSlides={true}
+          spaceBetween={5}
+          slidesPerView={width > 768 ? 3 : 1}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+          }}
+          grabCursor={true}
+          loop={true}
+          pagination={{
+            clickable: false,
+          }}
+          navigation={true}
+          modules={[EffectCoverflow, Pagination, Navigation]}>
           {news?.map((post, index) => {
-            return <Card key={index} post={post} />;
+            return (
+              <SwiperSlide className="my-swiper-slide" key={index}>
+                <Card key={index} post={post} />
+              </SwiperSlide>
+            );
           }) ||
             'ERROR 429 - Too Many Requests . You made too many requests within a window of time and have been rate limited. Back off for a while.'}
-        </div>
+        </Swiper>
 
         <Link className="btn-grad news-page" to="/news">
           ALL NEWS
