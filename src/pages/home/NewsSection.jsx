@@ -55,7 +55,6 @@ function NewsSection() {
           </select>
         </div>
 
-        {/* NEWS */}
         <p className={isLoading ? 'loading' : 'loading inactive'}>Loading...</p>
 
         <div className="container">

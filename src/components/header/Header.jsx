@@ -49,7 +49,15 @@ function Header() {
         <nav className={active ? 'active' : ''}>
           <Link to="/">Home</Link>
           <Link to="/#about">About</Link>
-          <Link to="/#newsSection">Blog</Link>
+          <div className="link-wrapper">
+            <Link to="/#newsSection">Blog</Link>
+            <div className="sub-nav">
+              <div className="shadow-md">
+                <Link to="/#newsSection">News Section</Link>
+                <Link to="/news">News Page</Link>
+              </div>
+            </div>
+          </div>
           <Link to="/#contact">Contact</Link>
         </nav>
 
