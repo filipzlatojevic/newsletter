@@ -1,5 +1,6 @@
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import './New.scss';
+import ocean from '/assets/ocean1.webp';
 
 function New() {
   const { state } = useLocation();
@@ -11,10 +12,7 @@ function New() {
         &#10096;
       </button>
       <div className="img-wrapper">
-        <img
-          src={state.urlToImage || '/public/assets/greenChair.webp'}
-          alt="background"
-        />
+        <img src={state.urlToImage || state?.image || ocean} alt="background" />
         <h2>{state.title}</h2>
       </div>
 

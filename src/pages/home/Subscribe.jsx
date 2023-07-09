@@ -7,6 +7,7 @@ function Subscribe() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const handleFocus = () => {
     setFocused(() => true);
@@ -15,8 +16,8 @@ function Subscribe() {
   const handleSubmit = async e => {
     e.preventDefault();
     setFocused(true);
-    setIsLoading(true);
     if (error) return;
+    setIsLoading(true);
 
     // TODO fetch POST method, handle pending, resolve and reject state of async operations
     await simulateFetching();
@@ -24,6 +25,9 @@ function Subscribe() {
     console.log(email);
     setIsLoading(false);
     e.target.reset(); // clear input field when submit
+
+    await delay(3000);
+    setMessage('');
   };
 
   const handleChangeEmail = e => {
@@ -32,29 +36,25 @@ function Subscribe() {
 
   useEffect(() => {
     email ? setError(false) : setError(true);
-  }, [email]);
+    emailRegex.test(email) ? setError(false) : setError(true);
+  }, [email, setEmail]);
 
   // SIMULATE server delay, just for test project without api for post method
   function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+  // SIMULATE post fetching for subscribe section
   async function simulateFetching() {
     setMessage('');
     if (Math.random() < 0.5) {
-      await delay(500);
+      await delay(800);
       setMessage('Succesfuly subscribed');
-      setIsLoading(false);
-      await delay(3000);
-      setMessage('');
     } else {
-      await delay(500);
+      await delay(800);
       setMessage('Something went wrong. Try again.');
-      setIsLoading(false);
-      await delay(3000);
-      setMessage('');
     }
   }
-  // END OF SIMULATE FUNCTION
+  // END OF SIMULATE FUNCTIONS
 
   return (
     <section id="subscribe" className="subscribe">

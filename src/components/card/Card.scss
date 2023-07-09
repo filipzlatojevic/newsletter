@@ -1,6 +1,7 @@
 .card {
-  min-width: 250px;
-  max-width: 300px;
+  width: 380px;
+  // height: 100%;
+  // margin: auto;
   border-radius: 7px;
   display: flex;
   flex-direction: column;
@@ -15,7 +16,7 @@
     }
 
     div {
-      animation: darker 0.2s 1 ease forwards;
+      animation: darker 0.1s 1 ease forwards;
     }
   }
 
@@ -23,7 +24,7 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    aspect-ratio: 1/1.18;
+    aspect-ratio: 1/1.05;
 
     img {
       width: 100%;
@@ -101,5 +102,11 @@
     h3 {
       font-weight: 700;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 250px;
   }
 }

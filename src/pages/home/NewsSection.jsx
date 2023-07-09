@@ -7,13 +7,18 @@ import { Link } from 'react-router-dom';
 function NewsSection() {
   const [isLoading, setIsLoading] = useState(true);
   const [news, setNews] = useState([]);
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState('general');
 
   const fetchNews = async (cat, limit) => {
     setIsLoading(true);
 
     const data = await newsService.getNews(cat, limit);
-    setNews(data.articles);
+    if (data.articles) {
+      setNews(data?.articles);
+    } else {
+      const data2 = await newsService.getNews2(cat, limit);
+      setNews(data2?.articles);
+    }
 
     setIsLoading(false);
   };
@@ -23,7 +28,7 @@ function NewsSection() {
   };
 
   useEffect(() => {
-    fetchNews(category, 4);
+    fetchNews(category, 3);
   }, [category]);
 
   return (
@@ -35,8 +40,9 @@ function NewsSection() {
             <span>News and</span> trends
           </h2>
 
+          <label htmlFor="category">Select category</label>
           <select onChange={handleSelect} name="category" id="category">
-            <option value="" defaultValue>
+            <option value="general" defaultValue>
               All
             </option>
             <option value="business">Business</option>
@@ -51,36 +57,16 @@ function NewsSection() {
 
         {/* NEWS */}
         <p className={isLoading ? 'loading' : 'loading inactive'}>Loading...</p>
+
         <div className="container">
-          {/* <div className="card shadow-md">
-            <div className="img-wrapper">
-              <img src="/assets/tokyo.webp" alt="background" />
-              <div />
-              <Link to="/" />
-            </div>
-
-            <div className="text-wrapper">
-              <Link className="button-grad" to="/">
-                See more
-              </Link>
-              <span>category</span>
-
-              <h3>How a progresive web app works</h3>
-
-              <p>
-                asdfasdfasdf asdfasfasdf asdf asd f Lorem ipsum dolor sit amet
-                consectetur adipisicing elit.
-              </p>
-            </div>
-          </div> */}
-
-          {news.map((post, index) => {
-            return <Card post={post} key={index} />;
-          })}
+          {news?.map((post, index) => {
+            return <Card key={index} post={post} />;
+          }) ||
+            'ERROR 429 - Too Many Requests . You made too many requests within a window of time and have been rate limited. Back off for a while.'}
         </div>
 
         <Link className="btn-grad news-page" to="/news">
-          News page
+          ALL NEWS
         </Link>
       </section>
     </section>
