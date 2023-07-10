@@ -35,7 +35,7 @@ function NewsSection() {
   };
 
   useEffect(() => {
-    // fetchNews(category, 6);
+    fetchNews(category, 6);
     setWidth(window.innerWidth);
   }, [category]);
 

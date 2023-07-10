@@ -26,6 +26,11 @@
         font-weight: 700;
         color: #fffcff;
       }
+
+      div {
+        transform: translateY(100%);
+        opacity: 0;
+      }
     }
 
     form {

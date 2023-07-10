@@ -16,12 +16,13 @@ function About() {
       cards.forEach(card => {
         gsap.to(card, {
           x: 0,
+          scaleX: 1,
           rotateX: 0,
           opacity: 1,
           scrollTrigger: {
             trigger: card,
-            start: '20px 90%',
-            end: '85% 55%',
+            start: '20px 95%',
+            end: '85% 60%',
             scrub: 0.3,
           },
         });

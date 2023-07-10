@@ -82,6 +82,10 @@ div {
   transition: color 0.9s ease;
 }
 
+span {
+  display: inline-block;
+}
+
 .font-satisfy {
   font-family: 'Satisfy', cursive;
   color: #93be30;
@@ -145,6 +149,12 @@ div {
   &:active {
     transform: scale(0.95);
   }
+}
+
+main.home .font-satisfy,
+main.home h2 {
+  transform: translateY(100%);
+  opacity: 0;
 }
 
 // animation keyframes

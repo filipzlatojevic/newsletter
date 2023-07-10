@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Hero.scss';
 import { useState, useLayoutEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import { Power1, gsap } from 'gsap';
 
 function Hero() {
   const [active, setActive] = useState(false);
@@ -11,14 +11,14 @@ function Hero() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       tl.current = gsap
-        .timeline({ defaults: { ease: 'power1.inOut' } })
+        .timeline({ defaults: { ease: Power1.easeInOut } })
         .to('.gsap-text', {
           opacity: 1,
           y: 0,
           stagger: 0.35,
           duration: 0.6,
         })
-        .to('.buttons-wrapper', { opacity: 1, duration: 0.6 });
+        .to('.buttons-wrapper', { opacity: 1, duration: 0.8 });
     }, container);
 
     return () => ctx.revert();
