@@ -34,7 +34,7 @@
       z-index: 1;
       border-radius: 10px;
       overflow: hidden;
-      max-width: 500px;
+      max-width: 450px;
       min-width: 250px;
       aspect-ratio: 16/9;
 
@@ -121,7 +121,8 @@
       align-items: center;
 
       .card {
-        min-height: 150px;
+        width: 90%;
+        height: 90%;
 
         a {
           height: 34px;
