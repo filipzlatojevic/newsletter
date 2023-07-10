@@ -5,7 +5,6 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
   position: relative;
 
   &::before {
@@ -191,5 +190,11 @@
 @media (max-width: 768px) {
   .video-wrapper {
     padding: 50px 7px 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-attachment: fixed;
   }
 }

@@ -14,7 +14,6 @@ function NewsSection() {
   const [isLoading, setIsLoading] = useState(true);
   const [news, setNews] = useState([]);
   const [category, setCategory] = useState('general');
-  const [width, setWidth] = useState();
 
   const fetchNews = async (cat, limit) => {
     setIsLoading(true);
@@ -36,7 +35,6 @@ function NewsSection() {
 
   useEffect(() => {
     fetchNews(category, 6);
-    setWidth(window.innerWidth);
   }, [category]);
 
   return (
@@ -70,7 +68,12 @@ function NewsSection() {
           effect={'coverflow'}
           centeredSlides={true}
           spaceBetween={5}
-          slidesPerView={width > 768 ? 3 : 1}
+          slidesPerView={1}
+          breakpoints={{
+            768: {
+              slidesPerView: 3,
+            },
+          }}
           coverflowEffect={{
             rotate: 50,
             stretch: 0,
