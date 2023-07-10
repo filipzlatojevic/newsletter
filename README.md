@@ -1,4 +1,4 @@
-# newsletter
+# newsletter gsap
 
 ## Available Scripts
 
