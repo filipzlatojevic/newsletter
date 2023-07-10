@@ -7,11 +7,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 function About() {
-  const containerRef = useRef();
+  const aboutRef = useRef();
 
   useLayoutEffect(() => {
     const ctx = gsap.context(self => {
       const cards = self.selector('.card');
+
       cards.forEach(card => {
         gsap.to(card, {
           x: 0,
@@ -19,19 +20,19 @@ function About() {
           opacity: 1,
           scrollTrigger: {
             trigger: card,
-            start: '20px 85%',
-            end: '85% 50%',
+            start: '20px 90%',
+            end: '85% 55%',
             scrub: 0.3,
           },
         });
       });
-    }, containerRef);
+    }, aboutRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section id="about" className="about">
+    <section ref={aboutRef} id="about" className="about">
       <section className="inner-section">
         <aside>
           <div className="title">
@@ -41,7 +42,7 @@ function About() {
             </h2>
           </div>
 
-          <div ref={containerRef} className="container">
+          <div className="container">
             <div className="card">
               <img src="/assets/ocean1.webp" alt="background" />
               <h3>Customer</h3>

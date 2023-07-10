@@ -38,6 +38,7 @@
       max-width: 500px;
       min-width: 250px;
       aspect-ratio: 16/9;
+      transition-timing-function: linear;
 
       &:first-child {
         transform: translateX(-80%);
@@ -54,7 +55,7 @@
       &:hover {
         img {
           scale: 1.1;
-          transition: all 0.2s ease;
+          // transition: all 0.2s ease;
         }
       }
 
@@ -220,6 +221,8 @@
     }
 
     .tech-card {
+      opacity: 0;
+      transform: translateX(80%);
       margin-bottom: 10px;
       background-color: var(--bg-secondary);
       border-radius: 10px;
@@ -229,11 +232,11 @@
       flex-direction: column;
       gap: 15px;
       position: relative;
-      transition: all 0.35s ease;
+      transition: box-shadow 0.5s ease;
 
       &:hover {
         scale: 102%;
-        transition: all 0.2s ease;
+        transition: box-shadow 0.2s ease;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
           rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
           rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
